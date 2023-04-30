@@ -1,0 +1,17 @@
+<h1 class="header">DeviceList</h1>
+<table tuiTable class="table h-[500px] w-[800px]" [columns]="columns">
+  <thead>
+  <tr tuiThGroup >
+    <th tuiTh class="head">ID</th>
+    <th tuiTh class="head">Name</th>
+    <th tuiTh class="head">LastActive</th>
+  </tr>
+  </thead>
+  <tbody tuiTbody [data]="devices">
+  <tr *ngFor="let item of devices">
+    <td class="td" tuiTd>{{ item.id }}</td>
+    <td class="td" tuiTd>{{ item.name }}</td>
+    <td class="td" tuiTd>{{ item.last_active!==null?(item.last_active*1000|date:'dd/MM/yyyy hh:mm':'':'ru'):''}}</td>
+  </tr>
+  </tbody>
+</table>
